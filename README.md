@@ -1,2 +1,4 @@
-# projetofinalcteds
-Repositório para o projeto final do CTEDS
+Dados para acesso:
+usuario: antonio
+senha: 1234
+
