@@ -1,1 +1,2 @@
-# antonio-d7-avaliacao
+# projetofinalcteds
+Repositório para o projeto final do CTEDS

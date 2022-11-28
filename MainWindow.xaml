@@ -1,0 +1,135 @@
+﻿<Window x:Class="WPFteste.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WPFteste"
+        mc:Ignorable="d"
+        Title="Login" Height="769" Width="1366" Opacity="0.8"
+        WindowStartupLocation="CenterScreen"
+        ResizeMode="CanResize">
+
+    <Grid>
+
+        <Image Margin="-695,-447,-695,-575" Source="/blackbackground.jpg" Stretch="Fill" Grid.RowSpan="2" Grid.ColumnSpan="3"/>
+        <Border Margin="0,10,0,-16" Grid.RowSpan="2" Grid.ColumnSpan="2">
+            <Border.Background>
+                <ImageBrush ImageSource="/background.jpg" Stretch="UniformToFill"/>
+            </Border.Background>
+        </Border>
+        <Canvas Margin="0,0,1404,10" Grid.ColumnSpan="2" >
+            <Rectangle
+    Width="281"
+    Height="426"
+    Fill="White"
+    Canvas.Left="579"
+    Stroke="Black" StrokeThickness="4"
+    RadiusX="30" RadiusY="30"
+    Canvas.Top="257" HorizontalAlignment="Left" VerticalAlignment="Center" Opacity="0.7" />
+
+            <Rectangle
+                Width="2362"
+                Height="128"
+                Fill="#000000" HorizontalAlignment="Center" VerticalAlignment="Center" Opacity="0.8" Canvas.Left="-461" />
+            <Image Source="/logo.png" Stretch="Fill" Canvas.Left="549" Canvas.Top="-131" HorizontalAlignment="Center" VerticalAlignment="Top" Height="340" Width="342"/>
+        </Canvas>
+        <TextBox x:Name="TextBox_Usuario" HorizontalAlignment="Left" Margin="587,396,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="252" Height="41" FontFamily="Adobe Hebrew" Background="#FF201E1E" Foreground="#FFDCDBD9" FontSize="32" RenderTransformOrigin="0.498,0.528" >
+            <TextBox.Style>
+                <Style TargetType="{x:Type TextBox}">
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="{x:Type TextBox}">
+                                <Border x:Name="border" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}" SnapsToDevicePixels="True">
+                                    <ScrollViewer x:Name="PART_ContentHost" Focusable="false" HorizontalScrollBarVisibility="Hidden" VerticalScrollBarVisibility="Hidden"/>
+                                </Border>
+                                <ControlTemplate.Triggers>
+                                    <Trigger Property="IsEnabled" Value="false">
+                                        <Setter Property="Opacity" TargetName="border" Value="0.56"/>
+                                    </Trigger>
+                                    <Trigger Property="IsMouseOver" Value="true">
+                                        <Setter Property="BorderBrush" TargetName="border" Value="#FF7EB4EA"/>
+                                    </Trigger>
+                                    <Trigger Property="IsFocused" Value="true">
+                                        <Setter Property="BorderBrush" TargetName="border" Value="Red "/>
+                                    </Trigger>
+                                </ControlTemplate.Triggers>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                </Style>
+            </TextBox.Style>
+        </TextBox>
+        <TextBox x:Name="TextBox_Senha" HorizontalAlignment="Left" Margin="591,489,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="252" Height="41" FontFamily="Adobe Hebrew" Background="#FF201E1E" Foreground="#FFDCDBD9" TextChanged="TextBox_Senha_TextChanged" FontSize="32">
+            <TextBox.Style>
+                <Style TargetType="{x:Type TextBox}">
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="{x:Type TextBox}">
+                                <Border x:Name="border" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}" SnapsToDevicePixels="True">
+                                    <ScrollViewer x:Name="PART_ContentHost" Focusable="false" HorizontalScrollBarVisibility="Hidden" VerticalScrollBarVisibility="Hidden"/>
+                                </Border>
+                                <ControlTemplate.Triggers>
+                                    <Trigger Property="IsEnabled" Value="false">
+                                        <Setter Property="Opacity" TargetName="border" Value="0.56"/>
+                                    </Trigger>
+                                    <Trigger Property="IsMouseOver" Value="true">
+                                        <Setter Property="BorderBrush" TargetName="border" Value="#FF7EB4EA"/>
+                                    </Trigger>
+                                    <Trigger Property="IsFocused" Value="true">
+                                        <Setter Property="BorderBrush" TargetName="border" Value="Red "/>
+                                    </Trigger>
+                                </ControlTemplate.Triggers>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                </Style>
+            </TextBox.Style>
+        </TextBox>
+        <Label x:Name="blablabla" Style="{StaticResource AdobeHebrew}" Content="USUÁRIO" HorizontalAlignment="Left" Margin="591,368,0,0" VerticalAlignment="Top" FontSize="16" FontFamily="Adobe Hebrew" Foreground="#FF443737" Height="28" Width="81"/>
+        <Label x:Name="blablabla_Copy" Style="{StaticResource AdobeHebrew}" Content="SENHA" HorizontalAlignment="Left" Margin="586,456,0,0" VerticalAlignment="Top" FontSize="16" FontFamily="Adobe Hebrew" Foreground="#FF443737" Height="28" Width="63"/>
+        <Button Content="Login" Click="Button_Click_1" HorizontalAlignment="Left" VerticalAlignment="Top" Height="68" Width="242" Background="#FFE8E5E5" FontFamily="Adobe Hebrew" FontSize="32" BorderBrush="Black" BorderThickness="5,5,5,5" Margin="591,558,0,0">
+            <Button.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="CornerRadius" Value="30"/>
+                </Style>
+            </Button.Resources>
+            <Button.Style>
+                <Style TargetType="{x:Type Button}">
+                    <Setter Property="Background" Value="LightBlue" />
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="{x:Type Button}">
+                                <Border x:Name="Border" Background="{TemplateBinding Background}">
+                                    <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                                </Border>
+                                <ControlTemplate.Triggers>
+                                    <Trigger Property="IsMouseOver" Value="True">
+                                        <Setter Property="Background" Value="Red" TargetName="Border" />
+                                    </Trigger>
+                                </ControlTemplate.Triggers>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                </Style>
+            </Button.Style>
+        </Button>
+        <Label x:Name="blablabla_Copy2" Style="{StaticResource AdobeHebrew}" Content="Faça Login" HorizontalAlignment="Left" Margin="591,287,0,0" VerticalAlignment="Top" FontSize="52" FontFamily="Adobe Hebrew" Foreground="#FF443737" Height="76" Width="264" IsEnabled="False">
+            <Label.Effect>
+                <DropShadowEffect
+      ShadowDepth="1"
+      Direction="200"
+      Color="Black"
+      Opacity="1"
+      BlurRadius="1"
+     />
+            </Label.Effect>
+        </Label>
+        <Label x:Name="blablabla_Copy3" Style="{StaticResource AdobeHebrew}" Content="Não tenho uma conta" HorizontalAlignment="Left" Margin="591,626,0,0" VerticalAlignment="Top" FontSize="26" FontFamily="Adobe Hebrew" Foreground="#FF443737" Height="43" Width="244"/>
+
+    </Grid>
+
+
+
+</Window>
+    
+    
